@@ -12,6 +12,10 @@ const openai = new OpenAI({
   baseURL: "https://api.groq.com/openai/v1",
 });
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 app.post("/api/chat", async (req, res) => {
   try {
     const { messages, systemPrompt } = req.body;
