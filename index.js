@@ -3,8 +3,16 @@ import express from "express";
 import cors from "cors";
 import OpenAI from "openai";
 
-const app = express();
-app.use(cors());
+const app = express(); 
+
+// إعدادات الـ CORS
+const corsOptions = {
+  origin: "http://localhost:5173", // استبدل هذا برابط موقعك (الفرونت أند)
+  methods: ["POST"], // السماح بالعمليات التي تحتاجها فقط
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 const openai = new OpenAI({
