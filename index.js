@@ -8,7 +8,7 @@ const app = express();
 // إعدادات الـ CORS
 const corsOptions = {
   origin: "http://localhost:5173", // استبدل هذا برابط موقعك (الفرونت أند)
-  methods: ["POST"], // السماح بالعمليات التي تحتاجها فقط
+  methods: ["POST", "GET"], // السماح بالعمليات التي تحتاجها فقط
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
